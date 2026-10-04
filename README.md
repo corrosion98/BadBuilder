@@ -9,7 +9,7 @@ Flipper, no phone or PC needed.
 badbuilder/
 ├── application.fam     # app manifest
 ├── badbuilder\_app.c     # source code
-├── badbuilder.png        # icon
+├── icon.png        # icon
 └── README.md
 badbuilder.fap # useful if you dont want to install ufbt
 ```
