@@ -1,7 +1,6 @@
 # BadBuilder
 
-An on-device, visual DuckyScript/BadUSB editor for Flipper Zero, built for
-the Momentum firmware. Build and edit `.txt` BadUSB scripts directly on the
+An on-device, visual DuckyScript/BadUSB editor for Flipper Zero. Build and edit `.txt` BadUSB scripts directly on the
 Flipper, no phone or PC needed.
 
 ## What's here
