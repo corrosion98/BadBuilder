@@ -14,44 +14,6 @@ badbuilder/
 badbuilder.fap           # compiled binary, ready to copy to the Flipper's SD card
 ```
 
-## How to build it yourself (Momentum FBT)
-
-1. Clone the Momentum firmware and set up its build tooling (one-time):
-
-```bash
-   git clone --recursive https://github.com/Next-Flip/Momentum-Firmware.git
-   cd Momentum-Firmware
-   ./fbt
-   ```
-
-   The first `./fbt` run downloads the ARM toolchain — it's slow once,
-fast after.
-
-2. Drop this app into the firmware's external apps folder:
-
-```bash
-   cp -r /path/to/badbuilder applications\_user/badbuilder
-   ```
-
-   (`applications\_user/` is scanned automatically by fbt; the folder name
-doesn't need to match the appid, but keeping it `badbuilder` is clearer.)
-
-3. Build just this app:
-
-```bash
-   ./fbt fap\_badbuilder
-   ```
-
-   The compiled `.fap` lands at:
-
-```
-   build/f7-firmware-D/.extapps/badbuilder.fap
-   ```
-
-4. Copy it to the Flipper's SD card at `/ext/apps/Tools/badbuilder.fap`
-(or use `./fbt launch APPSRC=applications\_user/badbuilder` to build,
-push over USB, and launch it in one step with the Flipper connected).
-
 ## Using the app
 
 * **D-pad Up/Down** in the left pane moves through the DuckyScript command
