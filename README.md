@@ -11,7 +11,6 @@ badbuilder/
 ├── badbuilder\_app.c     # entire app, single file
 ├── badbuilder.png        # 10x10 fap launcher icon (must live at app root)
 └── README.md
-badbuilder.fap           # compiled binary, ready to copy to the Flipper's SD card
 ```
 
 ## Using the app
