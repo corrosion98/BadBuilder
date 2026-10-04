@@ -863,14 +863,22 @@ static void bb_text_input_result(void* context) {
         }
         break;
     }
-    case PendingSaveAs: {
-        if(app->text_input_buf[0]) {
-            char full[200];
-            snprintf(full, sizeof(full), "%s/%s", BADUSB_DIR, app->text_input_buf);
-            bb_save_document(app, full);
+case PendingSaveAs: {
+    if(app->text_input_buf[0]) {
+        char full[200];
+        const char* name = app->text_input_buf;
+        size_t len = strlen(name);
+
+        if(len >= 4 && strcmp(name + len - 4, ".txt") == 0) {
+            snprintf(full, sizeof(full), "%s/%s", BADUSB_DIR, name);
+        } else {
+            snprintf(full, sizeof(full), "%s/%s.txt", BADUSB_DIR, name);
         }
-        break;
+
+        bb_save_document(app, full);
     }
+    break;
+}
     case PendingNone:
     default:
         break;
