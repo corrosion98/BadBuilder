@@ -7,10 +7,11 @@ Flipper, no phone or PC needed.
 
 ```
 badbuilder/
-├── application.fam     # app manifest (appid: badbuilder)
-├── badbuilder\_app.c     # entire app, single file
-├── badbuilder.png        # 10x10 fap launcher icon (must live at app root)
+├── application.fam     # app manifest
+├── badbuilder\_app.c     # source code
+├── badbuilder.png        # icon
 └── README.md
+badbuilder.fap # useful if you dont want to install ufbt
 ```
 
 ## Using the app
