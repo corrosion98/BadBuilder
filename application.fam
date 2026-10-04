@@ -8,7 +8,8 @@ App(
     stack_size=2 * 1024,
     fap_category="Tools",
     fap_version="1.0",
-    fap_icon="badbuilder.png",
+    fap_icon="icon.png",
+    fap_icon_assets="images",
     fap_author="BadBuilder",
     fap_description="On-device visual DuckyScript / BadUSB editor",
 )

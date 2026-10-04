@@ -15,7 +15,7 @@
 #include <dialogs/dialogs.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include "badbuilder_icons.h"
 #define TAG "BadBuilder"
 
 #define BADUSB_DIR         "/ext/badusb"
@@ -26,7 +26,7 @@
 #define MAX_FILENAME_LEN   64
 #define TEXT_INPUT_BUF_LEN 128
 #define MAX_BROWSER_FILES  64
-
+static void bb_text_input_result(void* context);
 /* ---------------------------------------------------------------------- */
 /* Command table                                                          */
 /* ---------------------------------------------------------------------- */
@@ -366,11 +366,17 @@ static void bb_open_text_input(
     app->pending_edit_index = edit_index;
 
     text_input_reset(app->text_input);
+    // keyboard crash fix
+    text_input_set_result_callback(
+    app->text_input,
+    bb_text_input_result,
+    app,
+    app->text_input_buf,
+    TEXT_INPUT_BUF_LEN,
+    true);
     text_input_set_header_text(app->text_input, header);
     /* re-attach the buffer since text_input_reset() clears internal state */
 }
-
-static void bb_text_input_result(void* context);
 
 /* ---------------------------------------------------------------------- */
 /* Drawing                                                                  */
